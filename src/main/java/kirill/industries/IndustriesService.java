@@ -28,6 +28,7 @@ public class IndustriesService {
         List<String> companiesNames = reader.readCompaniesNames();
 
         //с каждого сайта получаем список этих 50 компаний и храним в виде мапы
+        //ключ - это имя компании, значение - объект компании
         Map<String, CompanyDto> yahooCompaniesMap = makeHttpRequest(YAHOO_URL, companiesNames);
         Map<String, CompanyDto> indeedCompaniesMap = makeHttpRequest(INDEED_URL, companiesNames);
 
