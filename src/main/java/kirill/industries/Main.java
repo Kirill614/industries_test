@@ -17,5 +17,6 @@ public class Main {
         new IndustriesService(reader).joinIndustries().forEach(company -> {
             System.out.println(company.getName() + " " + company.getIndustry());
         });
+
     }
 }

@@ -39,7 +39,11 @@ public class IndustriesService {
             yahooCompaniesMap.entrySet().stream().forEach(entry -> {
                 String indeedIndustry = indeedCompaniesMap.get(entry.getKey()).getIndustry();
                 String yahooIndustry = entry.getValue().getIndustry();
-                updatedCompaniesList.add(new CompanyDto(entry.getKey(), yahooIndustry.concat(indeedIndustry)));
+                String newIndustry = new StringBuilder()
+                        .append(yahooIndustry)
+                        .append(", ")
+                        .append(indeedIndustry).toString();
+                updatedCompaniesList.add(new CompanyDto(entry.getKey(), newIndustry ));
             });
 
         }
